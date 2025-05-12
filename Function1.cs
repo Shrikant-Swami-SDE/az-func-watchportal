@@ -20,11 +20,11 @@ namespace WatchPortalFunction
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];
-
+            //Shr
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
             name = name ?? data?.name;
-
+            //Shr
             string responseMessage = string.IsNullOrEmpty(name)
                 ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
                 : $"Hello, {name}. This HTTP triggered function executed successfully.";
